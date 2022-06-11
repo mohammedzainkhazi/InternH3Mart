@@ -3,26 +3,27 @@ import Row from './Row';
 const Tables = () => {
     const [API, setAPI] = useState([]);
 
+    async function getData(n) {
+        const resp = await fetch('https://api.coincap.io/v2/assets').then(resp => resp.json());
+        let val = await resp.data;
+        const propertiesToRemove = ['explorer', 'maxSupply']
+        val.forEach(function (coin) {
+            propertiesToRemove.forEach(function (item) {
+                //console.log(coin[item])
+                delete coin[item];
+            });
+        })
+        setAPI(val.slice(0,n));
+    }
+
     useEffect(() => {
-        async function getData() {
-            const resp = await fetch('https://api.coincap.io/v2/assets').then(resp => resp.json());
-            let val = await resp.data;
-            const propertiesToRemove = ['explorer', 'maxSupply']
-            val.forEach(function (coin) {
-                propertiesToRemove.forEach(function (item) {
-                    //console.log(coin[item])
-                    delete coin[item];
-                });
-            })
-            setAPI(val);
-        }
-        getData();
+        getData(50);
     }, []);
 
 
     return (
         <section className="container mx-auto ">
-            <div className="w-full mb-8 overflow-hidden rounded-lg">
+            <div className="w-full mb-8 overflow-hidden rounded-lg shadow-xl">
                 <div className="w-full overflow-x-auto">
                     <table className="w-full">
                         <thead>
@@ -46,6 +47,9 @@ const Tables = () => {
                             }
                         </tbody>
                     </table>
+                    <div style={{display:"flex",justifyContent:"center",alignItems:"center",boxShadow:"10px 10px 10px "}}>
+                        <button style={{backgroundColor:"#18C683",borderRadius:"40px",font:"bolder",width:"150px"}} className="shadow-xl mt-10 mb-10 container flex flex-center justify-center text-center rounded items-center py-2 px-4 text-white " onClick={()=>getData(100)}>View More </button>
+                        </div>
                 </div>
             </div>
         </section>
