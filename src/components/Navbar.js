@@ -6,8 +6,8 @@ import { MdSettings } from "react-icons/md";
 function Navbar() {
     return (
         <div>
-            <div className='lg:ml-20 mt-0 pt-0'>
-            <header className="lg:ml-20 cursor-pointer text-gray-600 bg-white body-font ml-10 mr-20">
+            <div className='ml-20 mr-20 mt-0 pt-0'>
+            <header className="ml-20 cursor-pointer text-gray-600 bg-white body-font ml-10 mr-20">
                 <div className="container mx-auto flex flex-wrap p-5 justify-between pt-3 pb-3 flex-col md:flex-row items-center">
                     <nav className="text-sm flex lg:w-2/5 flex-wrap items-center text-black md:ml-auto">
                         <span className="mr-5">Coins</span>

@@ -4,7 +4,7 @@ import Tables from "./Tables"
 function Stats() {
     return (
         <section style={{paddingBottom:"8%",height:"200px"}} className="w-full m-0 pl-0 pr-0 ml-0 absolute bg-gradient-to-r from-blue-800 to-blue-300 text-white body-font ">
-            <div className="container flex w-full items-center justify-center mx-auto">
+            <div className="pl-0 ml-0 container flex w-full items-center justify-center mx-auto">
                 <div className="flex justify-around text-center">
                     <div className="p-4 m-8 mt-0 mb-0 sm:w-full w-full">
                     <h2 className="mr-9 p-0  w-full title-font font-bold sm:text-md text-white">MARKET CAP</h2>

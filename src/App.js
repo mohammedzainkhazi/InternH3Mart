@@ -5,7 +5,7 @@ import Stats from './components/Stats';
 
 function App() {
   return (
-      <div className='ml-10 mr-10 mt-0 pt-0'>
+      <div className=' mr-10 mt-0 pt-0'>
       <Navbar/>
       <Stats/>
     </div>
